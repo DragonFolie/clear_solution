@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  h2database:
+    image: oscarfonts/h2
+    ports:
+      - "8082:8082"  # Порт для доступу до консолі H2
+
+  spring-app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:testdb
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: password

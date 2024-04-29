@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "23571d76-4b20-4f31-b9e6-b86c8e3ca8d6",
+		"name": "Person",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18370859"
+	},
+	"item": [
+		{
+			"name": "Get all person",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"test2\",\r\n        \"surname\": \"te2st\",\r\n        \"email\": \"tes2t@gmail.com\",\r\n        \"dateOfBirth\": [\r\n            1970,\r\n            1,\r\n            1\r\n        ],\r\n        \"address\": \"te2st\",\r\n        \"phoneNumber\": \"+380653883388\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/person/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete person by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update person",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"test2\",\r\n        \"surname\": \"te2st\",\r\n        \"email\": \"tes2t@gmail.com\",\r\n        \"dateOfBirth\": [\r\n            1970,\r\n            1,\r\n            1\r\n        ],\r\n        \"address\": \"te2st\",\r\n        \"phoneNumber\": \"+380653883388\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/person/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find between",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/search/{from}/{to}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"search",
+						"{from}",
+						"{to}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
