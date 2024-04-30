@@ -9,7 +9,9 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Description;
+import org.springframework.test.annotation.DirtiesContext;
 
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -52,6 +54,8 @@ class PersonRepositoryTest {
     }
 
     @Test
+    @DirtiesContext
+    @Transactional
     public void personRepositoryReturnSavedListOfPerson(){
 
         LocalDate testDateOfBirth = LocalDate.of(1990, 1, 1);
@@ -73,6 +77,7 @@ class PersonRepositoryTest {
                 .phoneNumber("+380653883388")
                 .build();
 
+        personRepository.deleteAll();
         personRepository.save(person);
         personRepository.save(person2);
         List<Person> personList = personRepository.findAll();
@@ -134,9 +139,7 @@ class PersonRepositoryTest {
                 .build();
 
         personRepository.save(person);
-
         personRepository.deleteById(person.getId());
-
         assertTrue(personRepository.findById(person.getId()).isEmpty());
 
     }

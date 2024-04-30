@@ -13,7 +13,7 @@ public class ApplicationConstants {
    * Inner utility class for dto validation.
    */
   @UtilityClass
-  public class DataValidation {
+  static public class DataValidation {
 
     public static final int MIN_SIZE_OF_NAME = 1;
     public static final int MAX_SIZE_OF_NAME = 255;
