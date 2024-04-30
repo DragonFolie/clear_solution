@@ -1,7 +1,6 @@
 package com.service.impl;
 
 import com.entity.Person;
-import com.model.dto.PersonDto;
 import com.repository.PersonRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,14 +11,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Optional;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -86,7 +81,6 @@ class PersonServiceImplTest {
     }
 
 
-
     @Test
     public void personServiceUpdatePerson(){
 
@@ -109,15 +103,12 @@ class PersonServiceImplTest {
                 .phoneNumber("+380653883388")
                 .build();
 
-
-
         when(personRepository.save(person)).thenReturn(updatedPerson);
         Person result = personService.updatePerson(person);
 
         assertEquals(updatedPerson, result);
         verify(personRepository, times(1)).save(person);
     }
-
 
 
     @Test

@@ -1,12 +1,8 @@
 package com.repository;
 
 import com.entity.Person;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.jdbc.EmbeddedDatabaseConnection;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Description;
 import org.springframework.test.annotation.DirtiesContext;
@@ -14,7 +10,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -23,9 +18,6 @@ class PersonRepositoryTest {
 
     @Autowired
     private PersonRepository personRepository;
-
-//    @AfterEach
-//    public void
 
 
     @Test

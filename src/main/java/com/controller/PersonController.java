@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -29,6 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "/person")
+@PropertySource("classpath:configuration.person/person.properties")
 public class PersonController {
 
   private final PersonServiceImpl personServiceImpl;
@@ -55,7 +57,6 @@ public class PersonController {
     if (list.isEmpty()) {
       throw new NoSuchElementException("No such person found in the list of persons");
     }
-    System.out.println(list);
     return ResponseEntity.ok(list);
   }
 

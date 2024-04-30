@@ -32,23 +32,22 @@ public class PersonServiceImpl implements PersonService {
     this.personMapper = personMapper;
   }
 
-
+  @Override
   public List<Person> findAllPerson() {
-
     return personRepository.findAll();
   }
 
-
+  @Override
   public Person createPerson(Person person) {
     return personRepository.save(person);
   }
 
-
+  @Override
   public Person updatePerson(Person person) {
     return personRepository.save(person);
   }
 
-
+  @Override
   public void deletePersonById(Long id) {
     if (!personRepository.existsById(id)) {
       throw new NoSuchElementException("No such person found with id: " + id);
@@ -56,7 +55,7 @@ public class PersonServiceImpl implements PersonService {
     personRepository.deleteById(id);
   }
 
-
+  @Override
   public List<Person> findPersonByBirthDateRange(LocalDate from, LocalDate to) {
     return personRepository.findByDateOfBirthBetween(from, to);
   }
